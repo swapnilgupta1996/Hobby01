@@ -16,4 +16,37 @@ select distinct nationalIDnumber from HumanResources.Employee
 
 --where clause 
 
+--
+
+select name, groupname from HumanResources.Department
+where groupname LIKE 'MANUFACTURING';
+
+
+---Pratice
+SELECT Name from HumanResources.Department
+
+--Give me all the emloyee from the employee table.
+
+SELECT * FROM HumanResources.Employee
+
+-- GIVE ME A LIST OF EMPLOYEE WHO HAVE A ORGLEVEL = 2
+SELECT * FROM HumanResources.Employee WHERE OrganizationLevel = 2
+
+SELECT * FROM HumanResources.Employee
+
+-- Give me a list of all the employee  who have a tittle as facilities manager 
+
+SELECT * FROM HumanResources.Employee WHERE JobTitle LIKE 'FACILITIES MANAGER'
+
+--Give me all the employee who have the word manager in their tittle
+
+SELECT * FROM HumanResources.Employee WHERE JobTitle LIKE '%CONTROL%'
+
+-- QUERY TO SELCT DATE
+
+SELECT * FROM HumanResources.Employee WHERE BirthDate > '1/1/1980'
+
+--USING BETWEEN 
+
+SELECT * FROM HumanResources.Employee WHERE BirthDate Between '1/1/1970' and '1/1/1990'
 
