@@ -50,3 +50,61 @@ SELECT * FROM HumanResources.Employee WHERE BirthDate > '1/1/1980'
 
 SELECT * FROM HumanResources.Employee WHERE BirthDate Between '1/1/1970' and '1/1/1990'
 
+------------------------------------------------------------
+
+-- Calculated Columns 
+
+select * from Production.Product 
+
+select name, ListPrice from Production.Product 
+
+
+select name, ListPrice +12 AS ADJUSTEDLIST from Production.Product 
+
+
+select name, ListPrice from Production.Product WHERE ListPrice>600 
+
+-- INTO CLAUSE AND ENTER NEW TABLES
+
+select name, ListPrice +12 AS ADJUSTDLIST into production.product2 from Production.Product 
+
+-- Tenp tables and permanent tables >> Temp tables vanishes as soon as the sessions is stopped or deleted 
+
+SELECT NAME, ADJUSTEDLIST+10 AS ALP INTO #tempname FROM production.product2
+
+
+select* from #tempname
+
+-- DELETE DATA FROM TABLE 
+
+DELETE FROM Production.product2
+
+select* from production.product
+
+
+-------
+
+DELETE FROM Production.product2
+
+WHERE NAME LIKE 'bearing ball'
+
+-- WHERE NAME LIKE
+
+--------
+
+
+select * from Production.Product
+
+select name,productnumber,Reorderpoint into Production.productnew from Production.product
+
+
+select * from Production.productnew
+
+select Reorderpoint AS RP from Production.productnew
+
+UPDATE Production.productnew
+SET ReorderPoint = "RP"
+
+ALTER TABLE Production.productnew
+ADD RP int
+
