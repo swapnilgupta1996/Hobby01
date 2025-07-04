@@ -1,0 +1,19 @@
+USE AdventureWorks2012
+
+SELECT * FROM HumanResources.Department
+
+--SHOW ME ALL THE COLOUMNS 
+
+SELECT * FROM HumanResources.Employee
+
+--Distinct
+
+--show me all the distinct groupname 
+
+select distinct groupname from HumanResources.Department
+
+select distinct nationalIDnumber from HumanResources.Employee
+
+--where clause 
+
+
