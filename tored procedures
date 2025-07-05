@@ -1,0 +1,31 @@
+select * from sampleemployee
+
+------------Stored procedures 
+CREATE PROCEDURE MytestProc
+AS
+SET NOCOUNT ON 
+SELECT * FROM HumanResources.Shift
+
+EXECUTE MytestProc
+
+SELECT *FROM HumanResources.Shift
+CREATE PROCEDURE MytestProc2
+AS
+SET NOCOUNT OFF 
+SELECT * FROM HumanResources.Shift
+
+
+DROP PROC MytestProc
+DROP PROC MytestProc2
+
+---- Output values 
+
+-- returning values from stored procedure 
+
+CREATE PROC MYFIRSTRETURN8SP
+AS
+RETURN 18
+
+DECLARE @returnvalue INT
+EXEC @returnvalue = MYFIRSTRETURN8SP
+select @returnvalue
